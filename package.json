@@ -4,9 +4,10 @@
   "description": "An Instrument Jam Room",
   "main": "index.js",
   "scripts": {
-    "start": "node webpack.alias.js && npm run build && nodemon ./server.js",
+    "start": "node webpack.alias.js && npm run build",
     "build": "npm run buildScripts",
-    "buildScripts": "webpack --config=webpack.config.js",
+    "server": "nodemon ./server.js",
+    "buildScripts": "webpack --watch --config=webpack.config.js",
     "test": "test"
   },
   "repository": {
