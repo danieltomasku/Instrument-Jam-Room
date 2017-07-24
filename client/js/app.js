@@ -6,10 +6,14 @@ var socket = require('socket.io-client')('localhost:3000');
 
 var drums = require('drums');
 var synth = require('synth');
-var bass = require('base');
+var bass = require('bass');
 
 var app = {
+	instrument: 'drums',
 	init() {
+
+		window.addEventListener('click', this.selectInstrument);
+
 		drums.loadAllFiles();
 
 		socket.on('connect', function () {
@@ -21,10 +25,28 @@ var app = {
 		});
 
 		socket.on('buttonPress', function (data) {
-		    drums.playSound(data);
-		    // synth.playSound(data);
-		    // bass.playSound(data);
+
+			switch (this.instrument) {
+				case 'drums':
+					drums.playSound(data);
+					break;
+				case 'bass':
+					bass.playSound(data);
+					break;
+				case 'synth':
+					synth.playSound(data);
+					break;
+				default:
+					break;
+			}
+
 		});
+	},
+
+	selectInstrument(event) {
+		event.preventDefault();
+		console.log('Selected', event.target.dataset.instrument);
+		this.instrument = event.target.dataset.instrument;
 	}
 };
 
