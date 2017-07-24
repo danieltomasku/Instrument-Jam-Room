@@ -63,7 +63,7 @@ var SoundCloudAudioSource = function(player) {
   // public properties and methods
   this.volume = 0;
   this.streamData = new Uint8Array(128);
-  this.playStream = function(∂streamUrl) {
+  this.playStream = function(streamUrl) {
     // get the input stream from the audio element
     player.addEventListener('ended', function(){
       self.directStream('coasting');
