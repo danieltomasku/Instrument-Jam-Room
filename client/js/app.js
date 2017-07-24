@@ -10,9 +10,10 @@ var bass = require('bass');
 
 var app = {
 	instrument: 'drums',
+	button: document.querySelector('#instruments'),
 	init() {
 
-		window.addEventListener('click', this.selectInstrument);
+		this.button.addEventListener('click', this.selectInstrument.bind(this));
 
 		drums.loadAllFiles();
 
@@ -24,8 +25,9 @@ var app = {
 		    console.log(data);
 		});
 
-		socket.on('buttonPress', function (data) {
-
+		socket.on('buttonPress', (data) => {
+			console.log('instrument', this.instrument);
+			
 			switch (this.instrument) {
 				case 'drums':
 					drums.playSound(data);
@@ -37,15 +39,16 @@ var app = {
 					synth.playSound(data);
 					break;
 				default:
+					drums.playSound(data);
 					break;
 			}
 
-		});
+		}).bind(this);
 	},
 
 	selectInstrument(event) {
+		// console.log(event.target.dataset.instrument);
 		event.preventDefault();
-		console.log('Selected', event.target.dataset.instrument);
 		this.instrument = event.target.dataset.instrument;
 	}
 };

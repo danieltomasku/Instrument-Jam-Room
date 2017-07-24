@@ -74,9 +74,8 @@ var drums = {
   },
 
   playSound(data) {
-    console.log(data);
+    // console.log(data);
     var a = this.audio;
-    //a.pause();
     a.src = '';
 
     if (data.b0 === 1) {
