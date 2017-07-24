@@ -37,7 +37,7 @@ io.on('connection', function(){
 
 app.get(['*'], function (req, res) {
 	// buttonSocket.open();
-  	res.sendFile(path.resolve(__dirname + '/client', 'index.html'));
+  	res.sendFile(path.resolve(__dirname + '/dist', 'index.html'));
 });
 
 server.listen(port);
