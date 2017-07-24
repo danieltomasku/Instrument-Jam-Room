@@ -16,6 +16,7 @@
 	display: block;
 	border: none;
 	border-radius: 500px;
+	cursor: pointer;
 }
 
 .name {
@@ -43,7 +44,7 @@
   border: 1px solid white;
   font-size: 26px;
   text-align: center;
-  margin: 30px;
+  margin: 60px;
   padding: 30px;
 	color: white;
 }
@@ -62,7 +63,7 @@
   border: 1px solid white;
   font-size: 26px;
   text-align: center;
-  margin: 30px;
+  margin: 60px;
   padding: 30px;
 	color: white;
 }
