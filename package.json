@@ -1,0 +1,19 @@
+{
+  "name": "jam",
+  "version": "1.0.0",
+  "description": "An Instrument Jam Room",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieltomasku/Instrument-Jam-Room.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danieltomasku/Instrument-Jam-Room/issues"
+  },
+  "homepage": "https://github.com/danieltomasku/Instrument-Jam-Room#readme"
+}
