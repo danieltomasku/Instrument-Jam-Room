@@ -14,12 +14,14 @@ app.use('/', express.static(__dirname + '/dist'));
 var buttonSocket = require('socket.io-client')('http://10.0.0.145:3000/');
 
 buttonSocket.on('connect', function() {
-	console.log('connected to button socket');
+	console.log('Connected to button socket');
 });
 
 buttonSocket.on('buttonUpdate', function(data) {
+	// remove id eventually;
 	if (data.id === 6) {
 		console.log(data);
+		io.emit('buttonPress', data);
 	}
 });
 
@@ -33,10 +35,10 @@ buttonSocket.on('connect_error', function (error) {
 
 io.on('connection', function(){
 	console.log('User connected');
+	io.emit('newUser', 'New User in Room');
 });
 
 app.get(['*'], function (req, res) {
-	// buttonSocket.open();
   	res.sendFile(path.resolve(__dirname + '/dist', 'index.html'));
 });
 
