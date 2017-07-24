@@ -20,12 +20,15 @@
   },
   "homepage": "https://github.com/danieltomasku/Instrument-Jam-Room#readme",
   "dependencies": {
+    "document-ready": "^2.0.1",
     "express": "^4.15.3",
     "lodash": "^4.17.4",
     "socket.io": "^2.0.3",
     "socket.io-client": "^2.0.3"
   },
   "devDependencies": {
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "copy-webpack-plugin": "^4.0.1",
     "gulp-util": "^3.0.8",
     "html-webpack-plugin": "^2.29.0",

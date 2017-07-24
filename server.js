@@ -8,7 +8,7 @@ var io = require('socket.io')(server);
 
 var port = 3000;
 
-app.use('/', express.static(__dirname + '/client'));
+app.use('/', express.static(__dirname + '/dist'));
 
 // Button Server
 var buttonSocket = require('socket.io-client')('http://10.0.0.145:3000/');

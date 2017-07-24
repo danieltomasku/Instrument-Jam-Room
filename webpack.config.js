@@ -30,7 +30,7 @@ var config = {
 	},
 	output: {
 		path: BUILD_DIR,
-		publicPath: '/js/',
+		// publicPath: '/js/',
 		filename: 'js/[name].bundle.js',
 		chunkFilename: 'js/[name].chunk.js'
 	},
