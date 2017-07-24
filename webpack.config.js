@@ -73,6 +73,24 @@ var config = {
 	],
 	module: {
 		rules: [
+			{
+		        exclude: [
+		          /\.html$/,
+		          /\.(js|jsx)$/,
+		          /\.(ts|tsx)$/,
+		          /\.css$/,
+		          /\.json$/,
+		          /\.bmp$/,
+		          /\.gif$/,
+		          /\.jpe?g$/,
+		          /\.png$/,
+		          /\.ejs$/,
+		        ],
+		        loader: 'file-loader',
+		        options: {
+		          name: 'static/media/[name].[hash:8].[ext]',
+		        },
+		    },
 			// {
 			// 	test: /\.modernizrrc.js$/,
 			// 	loader: 'modernizr-loader'

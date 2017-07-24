@@ -1,17 +1,25 @@
 'use strict';
+var axios = require('axios');
+// var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+var file = require('../../assets/drum-samples/drums-clap.wav');
+
+console.log(file);
 
 var drumFiles = [
-  '/assets/drum-samples/drums-clap.wav',
-  '/assets/drum-samples/drums-crash.wav',
-  '/assets/drum-samples/drums-hat.wav',
-  '/assets/drum-samples/drums-kick.wav'
+  require('../../assets/drum-samples/drums-clap.wav'),
+  require('../../assets/drum-samples/drums-crash.wav'),
+  require('../../assets/drum-samples/drums-hat.wav'),
+  require('../../assets/drum-samples/drums-kick.wav')
+  // '/assets/drum-samples/simplerBear.mp3',
+  // '/assets/drum-samples/drums-clap.wav',
+  // '/assets/drum-samples/drums-crash.wav',
+  // '/assets/drum-samples/drums-hat.wav',
+  // '/assets/drum-samples/drums-kick.wav'
 ];
 
-
-bassSynthAudioBuffer = {};
-
-
 var drums = {
+  audio: new Audio(),
   loadAllFiles() {
     drumFiles.map((file) => {
       this.loadSoundFile(file);
@@ -19,17 +27,77 @@ var drums = {
   },
 
   loadSoundFile(file) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', document.origin + file, true);
-    xhr.responseType = 'arraybuffer';
-    xhr.onload = function(e) {
-    this.initSound(this.response); // this.response is an ArrayBuffer.
-    };
-    xhr.send();
+    // var xhr = new XMLHttpRequest();
+    // xhr.open('GET', document.origin + file, true);
+    // xhr.responseType = 'arraybuffer';
+    // xhr.onload = function() {
+    //   console.log(this.response);
+    //   // audioCtx.decodeAudioData(this.response, function(buffer) {
+    //   //   console.log(buffer);
+    //   //     // playSoundBuffer = buffer;
+    //   //     // playSound(); // don't start processing it before the response is there!
+    //   // }, function(error) {
+    //   //     console.error('decodeAudioData error', error);
+    //   // });
+    //   audioCtx.decodeAudioData(this.response).then(function(decodedData) {
+    //     console.log('test');
+    //     // drumAudioBuffer.push(decodedData);
+    //   }).catch((e) => {
+    //     console.log('error', e);
+    //   });
+
+    // };
+    // xhr.send();
+    // axios({
+    //   method:'get',
+    //   url: document.origin + file,
+    //   responseType:'arraybuffer'
+    // })
+    // .then(function(response) {
+    //   console.log(response);
+
+    //   respose.data.onload(() => {
+
+    //   });
+      // if (response.data) {
+      //   audioCtx.decodeAudioData(response.data).then(function(decodedData) {
+      //     console.log(decodedData);
+      //     // drumAudioBuffer.push(decodedData);
+      //   }).catch((e) => {
+      //     console.log('error', e);
+      //   });
+      // }
+      
+      // }, 2000);
+  
+    // });
   },
 
-  initSound(response) {
-    console.log(response);
+  playSound(data) {
+    console.log(data);
+    var a = this.audio;
+    //a.pause();
+    a.src = '';
+
+    if (data.b0 === 1) {
+        a.src = drumFiles[0];
+        a.play();
+    }
+
+    if (data.b1 === 1) {
+      a.src = drumFiles[1];
+      a.play();
+    }
+
+    if (data.b2 === 1) {
+      a.src = drumFiles[2];
+      a.play();
+    }
+
+    if (data.b3 === 1) {
+      a.src = drumFiles[3];
+      a.play();
+    }
   }
 };
 
