@@ -4,6 +4,7 @@
   "description": "An Instrument Jam Room",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon ./server.js",
     "test": "test"
   },
   "repository": {
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/danieltomasku/Instrument-Jam-Room/issues"
   },
-  "homepage": "https://github.com/danieltomasku/Instrument-Jam-Room#readme"
+  "homepage": "https://github.com/danieltomasku/Instrument-Jam-Room#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }
