@@ -386,11 +386,11 @@ window.onload = function init() {
     });
 
     var aboutButton = document.getElementById('credit');
-    // aboutButton.addEventListener('click', function(e) {
-    //   e.preventDefault();
-    //   var message = document.getElementById('info').innerHTML;
-    //   uiUpdater.displayMessage("About", message);
-    // });
+    aboutButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      var message = document.getElementById('info').innerHTML;
+      uiUpdater.displayMessage("About", message);
+    });
 
     window.addEventListener("keydown", keyControls, false);
 
