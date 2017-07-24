@@ -1,14 +1,15 @@
 'use strict';
 
 var ready = require('document-ready');
-// var visualizer = require('visualizer');
+var visualizer = require('visualizer');
 var socket = require('socket.io-client')('localhost:3000');
 
 var drums = require('drums');
+var synth = require('synth');
+var bass = require('base');
 
 var app = {
 	init() {
-
 		drums.loadAllFiles();
 
 		socket.on('connect', function () {
@@ -20,8 +21,9 @@ var app = {
 		});
 
 		socket.on('buttonPress', function (data) {
-		    // console.log(data);
 		    drums.playSound(data);
+		    // synth.playSound(data);
+		    // bass.playSound(data);
 		});
 	}
 };
