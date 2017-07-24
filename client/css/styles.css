@@ -1,0 +1,40 @@
+body {
+	background-image: linear-gradient(-138deg, #D09B50 0%, #A0B174 45%, #59D4AC 100%);
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+	background-size: cover;
+	background-repeat:no-repeat;
+	font-family: 'Circular Air Pro', sans-serif;
+  color: white;
+  height: 100vh;
+}
+
+.title {
+  font-family: 'Circular Air Pro', sans-serif;
+  font-size: 60px;
+  font-weight: normal;
+  color: white;
+  text-align: center;
+  letter-spacing: -.04em;
+  margin: 20px;
+}
+
+.users {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 25vw;
+  border: 1px solid white;
+  font-size: 26px;
+  text-align: center;
+}
+
+.user {
+  font-size: 20px;
+  font-weight: light;
+}
+
+.instruments {
+
+}
