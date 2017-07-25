@@ -30,16 +30,18 @@ var app = {
 			
 			switch (this.instrument) {
 				case 'drums':
+					console.log('drums');
 					drums.playSound(data);
 					break;
 				case 'bass':
+					console.log('bass');
 					bass.playSound(data);
 					break;
 				case 'synth':
+					console.log('synth');
 					synth.playSound(data);
 					break;
 				default:
-					drums.playSound(data);
 					break;
 			}
 

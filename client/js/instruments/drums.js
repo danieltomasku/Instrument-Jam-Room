@@ -76,24 +76,26 @@ var drums = {
   playSound(data) {
     // console.log(data);
     var a = this.audio;
-    a.src = '';
-
     if (data.b0 === 1) {
+        a.src = '';
         a.src = drumFiles[0];
         a.play();
     }
 
     if (data.b1 === 1) {
+      a.src = '';
       a.src = drumFiles[1];
       a.play();
     }
 
     if (data.b2 === 1) {
+      a.src = '';
       a.src = drumFiles[2];
       a.play();
     }
 
     if (data.b3 === 1) {
+      a.src = '';
       a.src = drumFiles[3];
       a.play();
     }
